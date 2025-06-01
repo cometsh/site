@@ -1,0 +1,47 @@
+---
+import "../style/main.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Comet</title>
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content="Decentralised music streaming on ATProtocol."
+    />
+    <meta
+      property="og:description"
+      content="Decentralised music streaming on ATProtocol."
+    />
+    <meta property="og:title" content="Comet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://comet.sh" />
+    <meta property="og:site_name" content="Comet" />
+    <script
+      defer
+      src="https://stats.ovy.sh/script.js"
+      data-website-id="8ef06cd9-9afa-4b67-a4ce-789d4b2a1edf"
+    >
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+</style>

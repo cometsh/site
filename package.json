@@ -1,0 +1,25 @@
+{
+  "name": "@cometsh/site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/work-sans": "^5.2.5",
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.8.1",
+    "simple-icons-astro": "^14.15.0",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.12"
+  }
+}

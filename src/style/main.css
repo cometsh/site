@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "@fontsource-variable/work-sans";
+
+@theme {
+  --color-brand-light: #ffa34e;
+  --color-brand-dark: #ff4400;
+  --font-sans: "Work Sans Variable", system-ui, sans-serif;
+}

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/multikey/v1",
+    "https://w3id.org/security/suites/secp256k1-2019/v1"
+  ],
+  "id": "did:web:comet.sh",
+  "alsoKnownAs": ["at://comet.sh"],
+  "verificationMethod": [
+    {
+      "id": "did:web:comet.sh#atproto",
+      "type": "Multikey",
+      "controller": "did:web:comet.sh",
+      "publicKeyMultibase": "zQ3shfsVZJKN6Lu5AtCNd32S9fqNbuA7X1Ahc9zswFb5eeHMF"
+    }
+  ],
+  "service": [
+    {
+      "id": "#atproto_pds",
+      "type": "AtprotoPersonalDataServer",
+      "serviceEndpoint": "https://pds.ovy.sh"
+    }
+  ]
+}
