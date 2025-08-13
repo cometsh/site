@@ -1,0 +1,104 @@
+---
+import { Check, Lightbulb, Clock, type Icon as IconType } from "@lucide/astro";
+
+const statusStrings = {
+  planned: "Planned",
+  "in-progress": "In Progress",
+  complete: "Complete",
+} as const;
+
+interface Props {
+  title: string;
+  icon: typeof IconType;
+  status?: "planned" | "in-progress" | "complete";
+}
+
+const { title, icon: Icon, status = "planned" } = Astro.props;
+let StatusIcon: typeof IconType;
+
+switch (status) {
+  case "planned":
+    StatusIcon = Lightbulb;
+    break;
+  case "in-progress":
+    StatusIcon = Clock;
+    break;
+  case "complete":
+    StatusIcon = Check;
+    break;
+}
+---
+
+<li class="roadmap-item">
+  <div
+    class="icon flex size-10 items-center justify-center rounded-lg border-2 border-black/20 bg-black/50"
+  >
+    <Icon aria-hidden="true" />
+  </div>
+
+  <article class="flex flex-col items-start gap-0.5">
+    <p
+      class="flex items-center gap-1 rounded-full border-2 border-black/20 px-2 py-0.5 text-xs tracking-wide uppercase"
+      class:list={{
+        "bg-black/50": status === "planned",
+        "bg-purple-950/70": status === "in-progress",
+        "bg-emerald-950/70": status === "complete",
+      }}
+    >
+      <StatusIcon size={12} aria-hidden="true" />
+      {statusStrings[status]}
+    </p>
+    <h3 class="text-lg font-semibold">{title}</h3>
+    <slot />
+  </article>
+
+  <hr aria-hidden="true" />
+  <hr aria-hidden="true" />
+</li>
+
+<style>
+  @reference "../style/main.css";
+
+  .roadmap-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 2rem 40px auto;
+    grid-template-areas:
+      "top-vr blank"
+      "icon content"
+      "bottom-vr content";
+
+    & > div {
+      grid-area: icon;
+    }
+
+    & > article {
+      grid-area: content;
+      padding-left: 2rem;
+    }
+
+    & > hr {
+      @apply bg-black/60;
+      width: 0.25rem;
+      height: 100%;
+      border: none;
+      margin: 0 auto;
+
+      &:first-of-type {
+        grid-area: top-vr;
+      }
+
+      &:last-of-type {
+        grid-area: bottom-vr;
+      }
+    }
+
+    &:first-child > hr:first-of-type {
+      display: none;
+    }
+
+    &:last-child > hr:last-of-type {
+      display: none;
+    }
+  }
+</style>

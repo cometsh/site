@@ -1,0 +1,100 @@
+---
+import {
+  AppWindow,
+  Cloudy,
+  Copyright,
+  DatabaseZap,
+  FlaskConical,
+  LibraryBig,
+  Rss,
+  Scale,
+  Share2,
+} from "@lucide/astro";
+import RoadmapItem from "./RoadmapItem.astro";
+---
+
+<section class="flex flex-col gap-4 text-left">
+  <h2 class="text-4xl font-bold">Roadmap</h2>
+  <p>
+    A rough roadmap of what we have planned for the future. Subject to change at
+    any time.
+  </p>
+
+  <ol class="flex flex-col">
+    <RoadmapItem
+      title="Foundational libraries"
+      status="in-progress"
+      icon={LibraryBig}
+    >
+      <p>
+        From-scratch Elixir libraries and tooling to interact with the AT
+        Protocol.
+      </p>
+      <ul class="mt-0.5 list-disc">
+        <li class="ml-6">
+          <a
+            href="https://github.com/cometsh/atex"
+            class="inline-block underline"
+          >
+            atex
+          </a> - Core utilities and frameworks for AT Protocol
+        </li>
+        <li class="ml-6">
+          <a
+            href="https://github.com/cometsh/drinkup"
+            class="inline-block underline"
+          >
+            Drinkup
+          </a>
+          - AT Protocol firehose & subscription listener
+        </li>
+      </ul>
+    </RoadmapItem>
+
+    <RoadmapItem title="Basic MVP" icon={AppWindow}>
+      Basic chronological timeline, follows, uploading of music, and playback.
+      Private testing.
+    </RoadmapItem>
+
+    <RoadmapItem title="Audio CDN" icon={Cloudy}>
+      Custom CDN for converting uploaded audio to streaming-friendly formats for
+      the music player, reducing strain on self-hosters and mobile bandwidth.
+    </RoadmapItem>
+
+    <RoadmapItem title="Alpha release" icon={FlaskConical} />
+
+    <RoadmapItem title="Social graph" icon={Share2}>
+      Expand the basic follow-only social graph with blocks and mutes applying
+      to commenting on tracks and playlists.
+    </RoadmapItem>
+
+    <RoadmapItem title="Discovery algorithm & custom feeds" icon={Rss}>
+      Create a discovery/recommendations algorithm for finding new content.
+      Additionally, create tools to allow the creation of custom feeds (and
+      autoplay?) for those who want them
+    </RoadmapItem>
+
+    <RoadmapItem title="Moderation" icon={Scale}>
+      Moderation tools for dealing with offensive content, modelled after
+      Bluesky's labelling system.
+    </RoadmapItem>
+
+    <RoadmapItem title="Copyright" icon={Copyright}>
+      A system to deal with copyright violations and piracy on the platform,
+      forwarding DMCA requests to PDS hosts and blocking content from the app
+      where needed, while still fighting for fair use and remix culture.
+    </RoadmapItem>
+
+    <!-- <RoadmapItem title="Out of alpha" icon={Rocket}>
+      Our UI and UX should be nice and shiny, and most major features should be
+      implemented. We're ready for adoption!
+    </RoadmapItem> -->
+
+    <RoadmapItem title="Hosted PDS offering" icon={DatabaseZap}>
+      Provide a hosted PDS offering with increased storage limits to allow
+      uploading longer tracks (e.g. mixes and podcasts) or other larger AT
+      Protocol media, without having to deal with the technical hassle of
+      self-hosting.
+    </RoadmapItem>
+  </ol>
+</section>

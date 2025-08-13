@@ -1,21 +1,24 @@
 ---
 import Logo from "../assets/logo.svg";
 import Layout from "../layouts/Layout.astro";
+import Roadmap from "../components/Roadmap.astro";
 import { Bluesky, Discord, Github } from "simple-icons-astro";
 ---
 
 <Layout>
   <main
-    class="flex flex-col items-center justify-center gap-3 text-center leading-none"
+    class="flex h-full w-full max-w-xl flex-col items-center gap-3 px-4 py-8 text-center leading-none sm:py-16 lg:py-24 2xl:py-32"
   >
     <div class="flex items-center justify-center gap-4">
       <Logo width="48px" height="48px" class="rounded-md shadow-md" />
       <h1 class="text-[64px] font-bold">Comet</h1>
     </div>
+
     <p class="leading-tight">
       Decentralised music streaming on ATProtocol.<br />Coming soon.
     </p>
-    <p class="flex items-center gap-2 font-semibold">
+
+    <p class="flex items-center gap-2 pb-7 font-semibold">
       <span class="mr-2">Follow us:</span>
       <a href="https://bsky.app/profile/comet.sh" rel="noopener me">
         <Bluesky />
@@ -23,6 +26,8 @@ import { Bluesky, Discord, Github } from "simple-icons-astro";
       <a href="https://discord.gg/ZKK7DnubD9" rel="noopener"><Discord /></a>
       <a href="https://github.com/cometsh" rel="noopener me"><Github /></a>
     </p>
+
+    <Roadmap />
   </main>
 </Layout>
 
@@ -30,6 +35,6 @@ import { Bluesky, Discord, Github } from "simple-icons-astro";
   @reference "../style/main.css";
 
   body {
-    @apply from-brand-light flex items-center justify-center bg-radial-[circle_at_50%_150%] via-amber-900 to-stone-950 text-white;
+    @apply from-brand-light flex justify-center bg-radial-[circle_at_50%_150%] via-amber-900 to-stone-950 bg-fixed text-white;
   }
 </style>
