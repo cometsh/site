@@ -3,5 +3,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://comet.sh",
   vite: { plugins: [tailwindcss()] },
 });
