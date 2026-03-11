@@ -11,14 +11,14 @@
       "id": "did:web:comet.sh#atproto",
       "type": "Multikey",
       "controller": "did:web:comet.sh",
-      "publicKeyMultibase": "zQ3shfsVZJKN6Lu5AtCNd32S9fqNbuA7X1Ahc9zswFb5eeHMF"
+      "publicKeyMultibase": "zQ3shvUFtKs3fraLyxoL7vgz4MGjPqp5izTNN6B1vt2QN7opV"
     }
   ],
   "service": [
     {
       "id": "#atproto_pds",
       "type": "AtprotoPersonalDataServer",
-      "serviceEndpoint": "https://pds.ovy.sh"
+      "serviceEndpoint": "https://pds.ovy.cloud"
     }
   ]
 }
