@@ -15,8 +15,8 @@ stdenv.mkDerivation (finalAttrs: {
 
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;
-    hash = "sha256-49SERVweWfu4IJ0QBCuys1FmH0VF864c3pywQrdGShI=";
-    fetcherVersion = 3;
+    hash = "sha256-6LZPOLeZ8Twc2VSfZHBC9lPKyo1E/NVVZq35J566QOU=";
+    fetcherVersion = 4;
   };
 
   buildPhase = ''
